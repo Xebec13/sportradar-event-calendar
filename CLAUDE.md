@@ -67,6 +67,7 @@ Commits align 1:1 with tasks from TASK.md.
 - **React 19.2.4** + **TypeScript 5** — strict mode, no `any`
 - **Tailwind CSS v4** — `@import "tailwindcss"` (not `@tailwind`); `@theme` for tokens
 - **ESLint 9** — flat config (`eslint.config.mjs`)
+- **lucide-react ^1.7.0** — icon library; installed
 - **Motion** — animation library; not yet installed; ask before adding; documentation: TBD
 - **No other libraries** — native Next.js/React; ask before installing anything
 
@@ -87,6 +88,7 @@ Read documentation only when genuinely uncertain — not before every task. When
 ## Conventions
 
 - **Tailwind**: max 10 utility classes per element (excluding hover/focus/responsive variants); if exceeded — stop and discuss component extraction
+- **Tailwind class order**: when editing or correcting Tailwind classes, always sort them according to the official Tailwind CSS class order convention (layout → box model → typography → visual → interactive)
 - **Components**: PascalCase, one per file; maximize reusability; single-use components colocated with their page
 - **Types**: explicit interfaces for all data shapes; no `any`; no implicit types
 - **File names**: kebab-case for non-components
