@@ -60,7 +60,6 @@ sportradar-event-calendar/
 ├── lib/
 │   ├── types.ts                  # All TypeScript interfaces
 │   ├── date-helpers.ts           # Date calculations (unit-testable)
-│   ├── event-filters.ts          # Filter logic (unit-testable) — not yet implemented
 │   ├── form-validation.ts        # Validation logic (unit-testable)
 │   └── local-storage.ts          # localStorage read/write abstraction
 │
@@ -124,7 +123,7 @@ use-events hook  (useState + localStorage sync)
        ↓
 Calendar.tsx  (Client orchestrator)
        ↑
-URL searchParams  →  lib/event-filters.ts (to be extracted — Task 9)
+URL searchParams  →  filter logic in Calendar.tsx
 ```
 
 - **Filters live in URL** (`searchParams`) — shareable links, survive refresh without localStorage, zero component state
@@ -211,7 +210,7 @@ One component per file. No default exports for non-component modules.
 | `tests/use-events.test.ts` | initialization, `addEvent` — id generation, localStorage sync, field mapping | `renderHook`, `act` |
 | `tests/AddEventForm.test.tsx` | rendering, submit validation, onBlur inline validation, error clearing | `render`, `screen`, `userEvent` |
 
-**Not tested**: `event-filters.ts` (not yet implemented), `local-storage.ts`, `use-click-outside.ts`, all other components.
+**Not tested**: `local-storage.ts`, `use-click-outside.ts`, all other components.
 
 ---
 
