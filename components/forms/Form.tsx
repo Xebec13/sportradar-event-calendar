@@ -8,6 +8,8 @@ import GridBg from '@/components/ui/GridBg';
 import AddEventForm from '@/components/forms/AddEventForm';
 import type { NewEventFormData } from '@/lib/types';
 
+// Shell for the add-event page: wires useEvents and router, delegates form rendering to AddEventForm
+// After a successful submit, redirects to the calendar (/)
 export default function Form() {
   const router = useRouter();
   const { addEvent } = useEvents();

@@ -68,7 +68,7 @@ Commits align 1:1 with tasks from TASK.md.
 - **Tailwind CSS v4** — `@import "tailwindcss"` (not `@tailwind`); `@theme` for tokens
 - **ESLint 9** — flat config (`eslint.config.mjs`)
 - **lucide-react ^1.7.0** — icon library; installed
-- **Motion** — animation library; not yet installed; ask before adding; documentation: TBD
+- **Motion** — animation library; not yet installed; deferred — to be decided after Task 9; documentation: TBD
 - **No other libraries** — native Next.js/React; ask before installing anything
 
 **Mock data**: `data/events.json` (JSON format)
@@ -113,6 +113,5 @@ npm run dev       # Start development server (http://localhost:3000)
 npm run build     # Production build
 npm run start     # Run production server
 npm run lint      # Run ESLint
+npm run test      # Run Vitest unit tests (to be configured at Task 9)
 ```
-
-No test runner configured yet — will be added at Task 9.

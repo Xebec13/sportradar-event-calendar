@@ -3,6 +3,8 @@ import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav/Nav";
 
+// Weights 300–700 cover the four-step hierarchy: light captions, regular body, semibold labels, bold headings
+// CSS variable --font-source-sans is consumed by Tailwind's font-sans utility via @theme in globals.css
 const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
   subsets: ["latin"],

@@ -4,6 +4,7 @@ interface Props {
   searchParams: Promise<{ date?: string; sport?: string }>;
 }
 
+// Formats today's date as YYYY-MM-DD — used as the default when no ?date= param is present in the URL
 function getTodayString(): string {
   const today = new Date();
   return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;

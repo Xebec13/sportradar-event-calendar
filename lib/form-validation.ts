@@ -1,8 +1,10 @@
 import type { NewEventFormData, FormErrors } from '@/lib/types';
 
-const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
-const TIME_REGEX = /^\d{2}:\d{2}$/;
+const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/; // YYYY-MM-DD — matches dateVenue format and native <input type="date"> output
+const TIME_REGEX = /^\d{2}:\d{2}$/;       // HH:MM — matches timeVenueUTC without seconds; native <input type="time"> outputs this format
 
+// Validates all required fields; cross-checks that both teams aren't the same (case-insensitive)
+// Returns a field-keyed error map — empty object means the form is valid
 export function validateNewEvent(data: NewEventFormData): FormErrors {
   const errors: FormErrors = {};
 
@@ -39,6 +41,7 @@ export function validateNewEvent(data: NewEventFormData): FormErrors {
   return errors;
 }
 
+// A form is valid when validateNewEvent returned no errors
 export function isFormValid(errors: FormErrors): boolean {
   return Object.keys(errors).length === 0;
 }

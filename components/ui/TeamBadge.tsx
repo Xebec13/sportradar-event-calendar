@@ -3,6 +3,7 @@ interface Props {
   won: boolean | null;
 }
 
+// won === null means the match hasn't been played yet — both teams rendered at muted opacity
 export default function TeamBadge({ abbreviation, won }: Props) {
   const bg = won ? 'bg-blue-950' : 'bg-blue-950/40';
   const text = won ? 'text-neutral-50' : 'text-neutral-50/40';

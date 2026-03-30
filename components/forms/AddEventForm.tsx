@@ -4,6 +4,7 @@ import { useState } from 'react';
 import type { NewEventFormData, FormErrors } from '@/lib/types';
 import { validateNewEvent, isFormValid } from '@/lib/form-validation';
 
+// Available sports — kept in sync with the SPORTS constant in data/sports.ts
 const SPORT_OPTIONS: { value: string; label: string }[] = [
   { value: 'soccer',     label: 'Soccer'     },
   { value: 'ice_hockey', label: 'Ice Hockey' },
@@ -11,11 +12,13 @@ const SPORT_OPTIONS: { value: string; label: string }[] = [
   { value: 'tennis',     label: 'Tennis'     },
 ];
 
+// Initial form state — also used as reset target after successful submission
 const EMPTY_FORM: NewEventFormData = {
   homeTeam: '', awayTeam: '', dateVenue: '', timeVenueUTC: '',
   sport: 'soccer', stadium: '', competitionName: '',
 };
 
+// Shared style constants — extracted to keep field markup under the 10-class limit
 const labelClass = 'block text-neutral-50/60 text-xs uppercase tracking-wide font-semibold mb-1.5';
 const errorClass = 'text-red-600 text-xs mt-1';
 
@@ -32,6 +35,7 @@ interface FieldProps {
   children: React.ReactNode;
 }
 
+// Generic field wrapper: renders label, optional marker, input slot, and inline error
 function FormField({ id, label, optional, error, colSpan, children }: FieldProps) {
   return (
     <div className={colSpan ? 'md:col-span-2' : undefined}>
@@ -50,11 +54,13 @@ export default function AddEventForm({ onSubmit }: Props) {
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Partial<Record<keyof NewEventFormData, boolean>>>({});
 
+  // Applies error border when field has an error; default focus border otherwise
   const inputClass = (field: keyof NewEventFormData) =>
     `w-full bg-neutral-900 border rounded-md px-3 py-2 text-sm text-neutral-50 outline-none transition-colors duration-150 ${
       errors[field] ? 'border-red-600/60' : 'border-blue-950 focus:border-red-600/40'
     }`;
 
+  // Re-validates only touched fields — avoids showing errors before the user interacts with them
   function handleChange(field: keyof NewEventFormData, value: string) {
     const updated = { ...form, [field]: value };
     setForm(updated);
@@ -63,12 +69,14 @@ export default function AddEventForm({ onSubmit }: Props) {
     }
   }
 
+  // Marks field as touched and runs its first validation
   function handleBlur(field: keyof NewEventFormData) {
     setTouched((prev) => ({ ...prev, [field]: true }));
     setErrors((prev) => ({ ...prev, [field]: validateNewEvent(form)[field] }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  // Marks all fields as touched to surface every error on the first submit attempt
+  function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     setTouched(Object.fromEntries(Object.keys(EMPTY_FORM).map((k) => [k, true])));
     const allErrors = validateNewEvent(form);

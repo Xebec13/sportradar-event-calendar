@@ -1,3 +1,5 @@
+// Decorative background grid faded toward edges via CSS radial-gradient mask
+// pointer-events-none prevents it from blocking clicks on content above
 export default function GridBg() {
     return (
         <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">

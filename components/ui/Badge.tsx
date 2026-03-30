@@ -4,6 +4,7 @@ interface Props {
   status: SportEvent['status'];
 }
 
+// Maps each event status to a short display label and its color treatment
 const config: Record<SportEvent['status'], { label: string; className: string }> = {
   played:    { label: 'FT',   className: 'bg-neutral-50/10 text-neutral-50/80' },
   scheduled: { label: 'SCH',  className: 'bg-blue-950 text-neutral-50/80' },
