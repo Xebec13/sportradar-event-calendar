@@ -21,21 +21,27 @@ interface Props {
 // Cast is safe — JSON shape is validated against SportEvent in data/events.json
 const allEvents = eventsData.data as SportEvent[];
 
-function filterEvents(events: SportEvent[], date?: string, sport?: string): SportEvent[] {
+function getTodayString(): string {
+  const today = new Date();
+  return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+}
+
+function filterEvents(events: SportEvent[], date: string, sport?: string): SportEvent[] {
   return events.filter((event) => {
-    if (date && event.dateVenue !== date) return false;
+    if (event.dateVenue !== date) return false;
     if (sport && event.sport !== sport) return false;
     return true;
   });
 }
 
 export default function Calendar({ date, sport }: Props) {
-  const events = filterEvents(allEvents, date, sport);
+  const activeDate = date ?? getTodayString();
+  const events = filterEvents(allEvents, activeDate, sport);
 
   return (
     <main>
       <CalendarHeader sports={SPORTS} activeSport={sport ?? null} />
-      <CalendarControls initialDate={date} />
+      <CalendarControls initialDate={activeDate} />
       <CalendarEventList events={events} />
     </main>
   );
