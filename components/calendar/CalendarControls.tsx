@@ -68,19 +68,20 @@ export default function CalendarControls() {
                 <ChevronLeft className="size-4 md:size-5" />
             </button>
 
-            <div ref={pickerRef} className="relative flex flex-1 items-center justify-center gap-2 min-h-10 h-full rounded-md bg-blue-950/80">
-                <div className="flex items-end justify-center gap-3 py-1.5 px-4 rounded-md bg-blue-950 shadow-md cursor-pointer" onClick={() => setIsPickerOpen((prev) => !prev)}>
+            <div ref={pickerRef} className="flex flex-1 items-center justify-center gap-2 min-h-10 h-full rounded-md bg-blue-950/80">
+                <div className="relative flex items-end justify-center gap-3 py-1.5 px-4 rounded-md bg-blue-950 border border-neutral-950/50 shadow-md cursor-pointer" onClick={() => setIsPickerOpen((prev) => !prev)}>
                     <CalendarDays className="size-4 md:size-5" />
                     <span className="text-xs font-semibold md:text-sm">{dateLabel}</span>
-                </div>
-
-                <div className={`absolute grid z-50 top-0 left-1/4 min-w-44 rounded-md border border-neutral-950/50 shadow-md transition-all ease-in-out duration-150 ${isPickerOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                    <div className="overflow-hidden">
-                        <div className="rounded-md bg-blue-950">
-                            <CalendarPicker year={viewYear} month={viewMonth} selectedDate={selectedDate} onNavigate={handleNavigate} onSelect={handleSelect} />
+                    <div className={`mt-0.5 absolute grid z-50 top-full left-0 min-w-44 rounded-md border border-neutral-950/50 shadow-md transition-all ease-in-out duration-150 ${isPickerOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                        <div className="overflow-hidden">
+                            <div className="rounded-md bg-blue-950">
+                                <CalendarPicker year={viewYear} month={viewMonth} selectedDate={selectedDate} onNavigate={handleNavigate} onSelect={handleSelect} />
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
             <button onClick={handleNextDay} className="flex items-center min-h-10 py-2 px-4 rounded-md bg-blue-950/80 shadow-2xl transition-colors duration-150 ease-in-out hover:bg-blue-900/80 cursor-pointer">

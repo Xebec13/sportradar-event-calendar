@@ -39,30 +39,29 @@ export default function Nav() {
     useClickOutside(navRef, () => setIsOpen(false))
 
     return (
-        <nav ref={navRef} className="relative flex items-center justify-between min-h-15 py-1.5 px-4 rounded-md bg-blue-950">
+        <nav ref={navRef} className="flex items-center justify-between min-h-15 py-1.5 px-4 rounded-md bg-blue-950">
             <Link href="/">
                 <Logo />
             </Link>
 
-            <div className="group flex flex-col items-center justify-center gap-1 size-full max-w-fit cursor-pointer" onClick={toggleMenu}>
+            <div className="relative group flex flex-col items-center justify-center gap-1 size-full max-w-fit cursor-pointer" onClick={toggleMenu}>
                 {Array.from({ length: 3 }).map((_, i) => (
                     <div key={i} className="h-0.5 w-5 md:h-0.75 md:w-6 bg-current rounded-md transition-colors duration-150 ease-in group-hover:bg-red-600/80" />
                 ))}
-            </div>
-
-            <div className={`absolute z-50 top-full min-w-1/3 md:min-w-1/5 right-0 grid transition-all duration-150 ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                }`}>
-                <div className="overflow-hidden">
-                    <div className="flex flex-col justify-end rounded-md bg-blue-950 border border-neutral-950/50 text-xs md:text-sm p-2">
-                        {navItems.map(({ href, label, title, icon: Icon }) => (
-                            <Link key={href} href={href} title={title} className="flex justify-between items-center gap-1 py-2 px-4 rounded-md bg-transparent transition-colors duration-150 ease-in hover:bg-blue-900/80">
-                                <Icon className="size-4 md:size-5"/>
-                                <span>{label}</span>
-                            </Link>
-                        ))}
+                <div className={`mt-0.5 absolute z-50 top-full right-full min-w-38 grid transition-all duration-150 ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                    <div className="overflow-hidden">
+                        <div className="flex flex-col justify-end rounded-md bg-blue-950 border border-neutral-950/50 text-xs md:text-sm p-2">
+                            {navItems.map(({ href, label, title, icon: Icon }) => (
+                                <Link key={href} href={href} title={title} className="flex justify-between items-center gap-1 py-2 px-4 rounded-md bg-transparent transition-colors duration-150 ease-in hover:bg-blue-900/80">
+                                    <Icon className="size-4 md:size-5" />
+                                    <span className="whitespace-nowrap">{label}</span>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
+
         </nav>
     );
 }
