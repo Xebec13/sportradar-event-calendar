@@ -1,0 +1,898 @@
+{
+  "data": [
+    {
+      "id": "al-shabab-vs-nasaf-2026-03-15",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "played",
+      "timeVenueUTC": "18:00:00",
+      "dateVenue": "2026-03-15",
+      "stadium": "King Fahd International Stadium",
+      "homeTeam": {
+        "name": "Al Shabab",
+        "officialName": "Al Shabab FC",
+        "slug": "al-shabab-fc",
+        "abbreviation": "SHA",
+        "teamCountryCode": "KSA",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Nasaf",
+        "officialName": "FC Nasaf",
+        "slug": "fc-nasaf-qarshi",
+        "abbreviation": "NAS",
+        "teamCountryCode": "UZB",
+        "stagePosition": null
+      },
+      "result": {
+        "homeGoals": 1,
+        "awayGoals": 2,
+        "winner": "Nasaf",
+        "winnerId": "fc-nasaf-qarshi",
+        "message": null,
+        "goals": [
+          { "minute": 23, "scorer": "Al-Qahtani", "assistedBy": null, "team": "home" },
+          { "minute": 67, "scorer": "Tursunov", "assistedBy": "Nishanov", "team": "away" },
+          { "minute": 82, "scorer": "Tursunov", "assistedBy": null, "team": "away" }
+        ],
+        "yellowCards": [
+          { "minute": 34, "player": "Gomez", "team": "home" },
+          { "minute": 71, "player": "Karimov", "team": "away" }
+        ],
+        "secondYellowCards": [],
+        "directRedCards": [],
+        "scoreByPeriods": [
+          { "period": "1H", "homeGoals": 1, "awayGoals": 0 },
+          { "period": "2H", "homeGoals": 0, "awayGoals": 2 }
+        ]
+      },
+      "stage": {
+        "id": "ROUND OF 16",
+        "name": "Round of 16",
+        "ordering": 4
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "al-hilal-saudi-fc-vs-shabab-al-ahli-club-2026-03-22",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "played",
+      "timeVenueUTC": "16:00:00",
+      "dateVenue": "2026-03-22",
+      "stadium": "Al Awwal Park",
+      "homeTeam": {
+        "name": "Al Hilal",
+        "officialName": "Al Hilal Saudi FC",
+        "slug": "al-hilal-saudi-fc",
+        "abbreviation": "HIL",
+        "teamCountryCode": "KSA",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Shabab Al Ahli",
+        "officialName": "Shabab Al Ahli Dubai",
+        "slug": "shabab-al-ahli-club",
+        "abbreviation": "SAH",
+        "teamCountryCode": "UAE",
+        "stagePosition": null
+      },
+      "result": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "winner": "Al Hilal",
+        "winnerId": "al-hilal-saudi-fc",
+        "message": null,
+        "goals": [
+          { "minute": 12, "scorer": "Al Dawsari", "assistedBy": "Mitrovic", "team": "home" },
+          { "minute": 55, "scorer": "Mitrovic", "assistedBy": null, "team": "home" }
+        ],
+        "yellowCards": [
+          { "minute": 44, "player": "Saleh", "team": "away" },
+          { "minute": 78, "player": "Hassan", "team": "away" }
+        ],
+        "secondYellowCards": [
+          { "minute": 89, "player": "Hassan", "team": "away" }
+        ],
+        "directRedCards": [],
+        "scoreByPeriods": [
+          { "period": "1H", "homeGoals": 1, "awayGoals": 0 },
+          { "period": "2H", "homeGoals": 1, "awayGoals": 0 }
+        ]
+      },
+      "stage": {
+        "id": "ROUND OF 16",
+        "name": "Round of 16",
+        "ordering": 4
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "al-nassr-fc-vs-persepolis-fc-2026-03-23",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "played",
+      "timeVenueUTC": "17:00:00",
+      "dateVenue": "2026-03-23",
+      "stadium": "Al Awwal Park",
+      "homeTeam": {
+        "name": "Al Nassr",
+        "officialName": "Al Nassr FC",
+        "slug": "al-nassr-fc",
+        "abbreviation": "NAS",
+        "teamCountryCode": "KSA",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Persepolis",
+        "officialName": "Persepolis FC",
+        "slug": "persepolis-fc",
+        "abbreviation": "PER",
+        "teamCountryCode": "IRN",
+        "stagePosition": null
+      },
+      "result": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "winner": "Al Nassr",
+        "winnerId": "al-nassr-fc",
+        "message": null,
+        "goals": [
+          { "minute": 9, "scorer": "Ronaldo", "assistedBy": null, "team": "home" },
+          { "minute": 38, "scorer": "Talisca", "assistedBy": "Ronaldo", "team": "home" },
+          { "minute": 74, "scorer": "Hosseini", "assistedBy": null, "team": "away" }
+        ],
+        "yellowCards": [
+          { "minute": 52, "player": "Jalali", "team": "away" }
+        ],
+        "secondYellowCards": [],
+        "directRedCards": [],
+        "scoreByPeriods": [
+          { "period": "1H", "homeGoals": 2, "awayGoals": 0 },
+          { "period": "2H", "homeGoals": 0, "awayGoals": 1 }
+        ]
+      },
+      "stage": {
+        "id": "ROUND OF 16",
+        "name": "Round of 16",
+        "ordering": 4
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "jeonbuk-motors-vs-vissel-kobe-2026-03-23",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "played",
+      "timeVenueUTC": "11:00:00",
+      "dateVenue": "2026-03-23",
+      "stadium": "Jeonju World Cup Stadium",
+      "homeTeam": {
+        "name": "Jeonbuk",
+        "officialName": "Jeonbuk Hyundai Motors FC",
+        "slug": "jeonbuk-motors",
+        "abbreviation": "JEO",
+        "teamCountryCode": "KOR",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Vissel Kobe",
+        "officialName": "Vissel Kobe",
+        "slug": "vissel-kobe",
+        "abbreviation": "VIS",
+        "teamCountryCode": "JPN",
+        "stagePosition": null
+      },
+      "result": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "winner": null,
+        "winnerId": null,
+        "message": null,
+        "goals": [],
+        "yellowCards": [
+          { "minute": 61, "player": "Kim Min-jae", "team": "home" }
+        ],
+        "secondYellowCards": [],
+        "directRedCards": [],
+        "scoreByPeriods": [
+          { "period": "1H", "homeGoals": 0, "awayGoals": 0 },
+          { "period": "2H", "homeGoals": 0, "awayGoals": 0 }
+        ]
+      },
+      "stage": {
+        "id": "ROUND OF 16",
+        "name": "Round of 16",
+        "ordering": 4
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "esteghlal-fc-vs-al-ain-fc-2026-03-24",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "played",
+      "timeVenueUTC": "15:30:00",
+      "dateVenue": "2026-03-24",
+      "stadium": "Azadi Stadium",
+      "homeTeam": {
+        "name": "Esteghlal",
+        "officialName": "Esteghlal FC",
+        "slug": "esteghlal-fc",
+        "abbreviation": "EST",
+        "teamCountryCode": "IRN",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Al Ain",
+        "officialName": "Al Ain FC",
+        "slug": "al-ain-fc",
+        "abbreviation": "AIN",
+        "teamCountryCode": "UAE",
+        "stagePosition": null
+      },
+      "result": {
+        "homeGoals": 1,
+        "awayGoals": 3,
+        "winner": "Al Ain",
+        "winnerId": "al-ain-fc",
+        "message": null,
+        "goals": [
+          { "minute": 14, "scorer": "Soufiane Rahimi", "assistedBy": null, "team": "away" },
+          { "minute": 29, "scorer": "Mehdi Taremi", "assistedBy": null, "team": "home" },
+          { "minute": 58, "scorer": "Soufiane Rahimi", "assistedBy": "Kodjo", "team": "away" },
+          { "minute": 88, "scorer": "Kodjo", "assistedBy": null, "team": "away" }
+        ],
+        "yellowCards": [
+          { "minute": 41, "player": "Pouraliganji", "team": "home" },
+          { "minute": 77, "player": "Al Hamdan", "team": "away" }
+        ],
+        "secondYellowCards": [],
+        "directRedCards": [
+          { "minute": 90, "player": "Pouraliganji", "team": "home" }
+        ],
+        "scoreByPeriods": [
+          { "period": "1H", "homeGoals": 1, "awayGoals": 1 },
+          { "period": "2H", "homeGoals": 0, "awayGoals": 2 }
+        ]
+      },
+      "stage": {
+        "id": "ROUND OF 16",
+        "name": "Round of 16",
+        "ordering": 4
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "al-ittihad-fc-vs-ulsan-hd-fc-2026-03-26",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "played",
+      "timeVenueUTC": "17:00:00",
+      "dateVenue": "2026-03-26",
+      "stadium": "King Abdullah Sports City",
+      "homeTeam": {
+        "name": "Al Ittihad",
+        "officialName": "Al Ittihad FC",
+        "slug": "al-ittihad-fc",
+        "abbreviation": "ITT",
+        "teamCountryCode": "KSA",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Ulsan HD",
+        "officialName": "Ulsan HD FC",
+        "slug": "ulsan-hd-fc",
+        "abbreviation": "ULS",
+        "teamCountryCode": "KOR",
+        "stagePosition": null
+      },
+      "result": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "winner": "Al Ittihad",
+        "winnerId": "al-ittihad-fc",
+        "message": null,
+        "goals": [
+          { "minute": 7, "scorer": "Benzema", "assistedBy": null, "team": "home" },
+          { "minute": 31, "scorer": "Benzema", "assistedBy": "Kanno", "team": "home" },
+          { "minute": 53, "scorer": "Oh Hyeon-gyu", "assistedBy": null, "team": "away" },
+          { "minute": 79, "scorer": "Romarinho", "assistedBy": "Benzema", "team": "home" }
+        ],
+        "yellowCards": [
+          { "minute": 45, "player": "Lee Chung-yong", "team": "away" },
+          { "minute": 66, "player": "Kanno", "team": "home" }
+        ],
+        "secondYellowCards": [],
+        "directRedCards": [],
+        "scoreByPeriods": [
+          { "period": "1H", "homeGoals": 2, "awayGoals": 0 },
+          { "period": "2H", "homeGoals": 1, "awayGoals": 1 }
+        ]
+      },
+      "stage": {
+        "id": "QUARTER FINAL",
+        "name": "Quarter Final",
+        "ordering": 5
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "al-sadd-sc-vs-yokohama-f-marinos-2026-03-27",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "played",
+      "timeVenueUTC": "14:00:00",
+      "dateVenue": "2026-03-27",
+      "stadium": "Jassim Bin Hamad Stadium",
+      "homeTeam": {
+        "name": "Al Sadd",
+        "officialName": "Al Sadd SC",
+        "slug": "al-sadd-sc",
+        "abbreviation": "SAD",
+        "teamCountryCode": "QAT",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Yokohama FM",
+        "officialName": "Yokohama F. Marinos",
+        "slug": "yokohama-f-marinos",
+        "abbreviation": "YFM",
+        "teamCountryCode": "JPN",
+        "stagePosition": null
+      },
+      "result": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "winner": "Al Sadd",
+        "winnerId": "al-sadd-sc",
+        "message": null,
+        "goals": [
+          { "minute": 19, "scorer": "Al Haydos", "assistedBy": null, "team": "home" },
+          { "minute": 63, "scorer": "Santi Cazorla", "assistedBy": "Al Haydos", "team": "home" }
+        ],
+        "yellowCards": [],
+        "secondYellowCards": [],
+        "directRedCards": [],
+        "scoreByPeriods": [
+          { "period": "1H", "homeGoals": 1, "awayGoals": 0 },
+          { "period": "2H", "homeGoals": 1, "awayGoals": 0 }
+        ]
+      },
+      "stage": {
+        "id": "QUARTER FINAL",
+        "name": "Quarter Final",
+        "ordering": 5
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "sepahan-fc-vs-al-wahda-fc-2026-03-27",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "played",
+      "timeVenueUTC": "16:30:00",
+      "dateVenue": "2026-03-27",
+      "stadium": "Naghsh-e Jahan Stadium",
+      "homeTeam": {
+        "name": "Sepahan",
+        "officialName": "Sepahan FC",
+        "slug": "sepahan-fc",
+        "abbreviation": "SEP",
+        "teamCountryCode": "IRN",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Al Wahda",
+        "officialName": "Al Wahda FC",
+        "slug": "al-wahda-fc",
+        "abbreviation": "WAH",
+        "teamCountryCode": "UAE",
+        "stagePosition": null
+      },
+      "result": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "winner": "Sepahan",
+        "winnerId": "sepahan-fc",
+        "message": null,
+        "goals": [
+          { "minute": 56, "scorer": "Rezaeian", "assistedBy": "Mahdavikia", "team": "home" }
+        ],
+        "yellowCards": [
+          { "minute": 22, "player": "Al Menhali", "team": "away" },
+          { "minute": 48, "player": "Rezaeian", "team": "home" }
+        ],
+        "secondYellowCards": [],
+        "directRedCards": [],
+        "scoreByPeriods": [
+          { "period": "1H", "homeGoals": 0, "awayGoals": 0 },
+          { "period": "2H", "homeGoals": 1, "awayGoals": 0 }
+        ]
+      },
+      "stage": {
+        "id": "QUARTER FINAL",
+        "name": "Quarter Final",
+        "ordering": 5
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "al-qadsiah-fc-vs-al-ain-fc-2026-03-29",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "played",
+      "timeVenueUTC": "17:00:00",
+      "dateVenue": "2026-03-29",
+      "stadium": "Prince Mohamed bin Fahd Stadium",
+      "homeTeam": {
+        "name": "Al Qadsiah",
+        "officialName": "Al Qadsiah FC",
+        "slug": "al-qadsiah-fc",
+        "abbreviation": "QAD",
+        "teamCountryCode": "KSA",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Al Ain",
+        "officialName": "Al Ain FC",
+        "slug": "al-ain-fc",
+        "abbreviation": "AIN",
+        "teamCountryCode": "UAE",
+        "stagePosition": null
+      },
+      "result": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "winner": "Al Ain",
+        "winnerId": "al-ain-fc",
+        "message": null,
+        "goals": [
+          { "minute": 83, "scorer": "Soufiane Rahimi", "assistedBy": null, "team": "away" }
+        ],
+        "yellowCards": [
+          { "minute": 37, "player": "Asiri", "team": "home" },
+          { "minute": 71, "player": "Kodjo", "team": "away" }
+        ],
+        "secondYellowCards": [],
+        "directRedCards": [],
+        "scoreByPeriods": [
+          { "period": "1H", "homeGoals": 0, "awayGoals": 0 },
+          { "period": "2H", "homeGoals": 0, "awayGoals": 1 }
+        ]
+      },
+      "stage": {
+        "id": "QUARTER FINAL",
+        "name": "Quarter Final",
+        "ordering": 5
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "al-nassr-fc-vs-al-ittihad-fc-2026-03-30",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "played",
+      "timeVenueUTC": "17:00:00",
+      "dateVenue": "2026-03-30",
+      "stadium": "Al Awwal Park",
+      "homeTeam": {
+        "name": "Al Nassr",
+        "officialName": "Al Nassr FC",
+        "slug": "al-nassr-fc",
+        "abbreviation": "NAS",
+        "teamCountryCode": "KSA",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Al Ittihad",
+        "officialName": "Al Ittihad FC",
+        "slug": "al-ittihad-fc",
+        "abbreviation": "ITT",
+        "teamCountryCode": "KSA",
+        "stagePosition": null
+      },
+      "result": {
+        "homeGoals": 1,
+        "awayGoals": 0,
+        "winner": "Al Nassr",
+        "winnerId": "al-nassr-fc",
+        "message": null,
+        "goals": [
+          { "minute": 45, "scorer": "Ronaldo", "assistedBy": "Brozovic", "team": "home" }
+        ],
+        "yellowCards": [
+          { "minute": 28, "player": "Kanno", "team": "away" }
+        ],
+        "secondYellowCards": [],
+        "directRedCards": [],
+        "scoreByPeriods": [
+          { "period": "1H", "homeGoals": 1, "awayGoals": 0 },
+          { "period": "2H", "homeGoals": 0, "awayGoals": 0 }
+        ]
+      },
+      "stage": {
+        "id": "SEMI FINAL",
+        "name": "Semi Final",
+        "ordering": 6
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "persepolis-fc-vs-ulsan-hd-fc-2026-03-30",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "played",
+      "timeVenueUTC": "14:00:00",
+      "dateVenue": "2026-03-30",
+      "stadium": "Azadi Stadium",
+      "homeTeam": {
+        "name": "Persepolis",
+        "officialName": "Persepolis FC",
+        "slug": "persepolis-fc",
+        "abbreviation": "PER",
+        "teamCountryCode": "IRN",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Ulsan HD",
+        "officialName": "Ulsan HD FC",
+        "slug": "ulsan-hd-fc",
+        "abbreviation": "ULS",
+        "teamCountryCode": "KOR",
+        "stagePosition": null
+      },
+      "result": {
+        "homeGoals": 2,
+        "awayGoals": 3,
+        "winner": "Ulsan HD",
+        "winnerId": "ulsan-hd-fc",
+        "message": null,
+        "goals": [
+          { "minute": 11, "scorer": "Oh Hyeon-gyu", "assistedBy": null, "team": "away" },
+          { "minute": 33, "scorer": "Hosseini", "assistedBy": null, "team": "home" },
+          { "minute": 50, "scorer": "Hosseini", "assistedBy": "Taremi", "team": "home" },
+          { "minute": 68, "scorer": "Oh Hyeon-gyu", "assistedBy": "Lee Chung-yong", "team": "away" },
+          { "minute": 90, "scorer": "Lee Chung-yong", "assistedBy": null, "team": "away" }
+        ],
+        "yellowCards": [
+          { "minute": 44, "player": "Jalali", "team": "home" },
+          { "minute": 85, "player": "Lee Chung-yong", "team": "away" }
+        ],
+        "secondYellowCards": [],
+        "directRedCards": [],
+        "scoreByPeriods": [
+          { "period": "1H", "homeGoals": 1, "awayGoals": 1 },
+          { "period": "2H", "homeGoals": 1, "awayGoals": 2 }
+        ]
+      },
+      "stage": {
+        "id": "SEMI FINAL",
+        "name": "Semi Final",
+        "ordering": 6
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "vissel-kobe-vs-al-sadd-sc-2026-04-01",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "scheduled",
+      "timeVenueUTC": "12:00:00",
+      "dateVenue": "2026-04-01",
+      "stadium": null,
+      "homeTeam": {
+        "name": "Vissel Kobe",
+        "officialName": "Vissel Kobe",
+        "slug": "vissel-kobe",
+        "abbreviation": "VIS",
+        "teamCountryCode": "JPN",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Al Sadd",
+        "officialName": "Al Sadd SC",
+        "slug": "al-sadd-sc",
+        "abbreviation": "SAD",
+        "teamCountryCode": "QAT",
+        "stagePosition": null
+      },
+      "result": null,
+      "stage": {
+        "id": "SEMI FINAL",
+        "name": "Semi Final",
+        "ordering": 6
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "esteghlal-fc-vs-jeonbuk-motors-2026-04-01",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "scheduled",
+      "timeVenueUTC": "16:00:00",
+      "dateVenue": "2026-04-01",
+      "stadium": null,
+      "homeTeam": {
+        "name": "Esteghlal",
+        "officialName": "Esteghlal FC",
+        "slug": "esteghlal-fc",
+        "abbreviation": "EST",
+        "teamCountryCode": "IRN",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Jeonbuk",
+        "officialName": "Jeonbuk Hyundai Motors FC",
+        "slug": "jeonbuk-motors",
+        "abbreviation": "JEO",
+        "teamCountryCode": "KOR",
+        "stagePosition": null
+      },
+      "result": null,
+      "stage": {
+        "id": "SEMI FINAL",
+        "name": "Semi Final",
+        "ordering": 6
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "al-duhail-sc-vs-al-rayyan-sc-2026-04-02",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "scheduled",
+      "timeVenueUTC": "15:25:00",
+      "dateVenue": "2026-04-02",
+      "stadium": null,
+      "homeTeam": {
+        "name": "Al Duhail",
+        "officialName": "Al Duhail SC",
+        "slug": "al-duhail-sc",
+        "abbreviation": "DUH",
+        "teamCountryCode": "QAT",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Al Rayyan",
+        "officialName": "Al Rayyan SC",
+        "slug": "al-rayyan-sc",
+        "abbreviation": "RYN",
+        "teamCountryCode": "QAT",
+        "stagePosition": null
+      },
+      "result": null,
+      "stage": {
+        "id": "SEMI FINAL",
+        "name": "Semi Final",
+        "ordering": 6
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "yokohama-f-marinos-vs-al-ain-fc-2026-04-02",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "scheduled",
+      "timeVenueUTC": "12:00:00",
+      "dateVenue": "2026-04-02",
+      "stadium": null,
+      "homeTeam": {
+        "name": "Yokohama FM",
+        "officialName": "Yokohama F. Marinos",
+        "slug": "yokohama-f-marinos",
+        "abbreviation": "YFM",
+        "teamCountryCode": "JPN",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Al Ain",
+        "officialName": "Al Ain FC",
+        "slug": "al-ain-fc",
+        "abbreviation": "AIN",
+        "teamCountryCode": "UAE",
+        "stagePosition": null
+      },
+      "result": null,
+      "stage": {
+        "id": "SEMI FINAL",
+        "name": "Semi Final",
+        "ordering": 6
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "al-nassr-fc-vs-ulsan-hd-fc-2026-04-04",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "scheduled",
+      "timeVenueUTC": "17:00:00",
+      "dateVenue": "2026-04-04",
+      "stadium": null,
+      "homeTeam": {
+        "name": "Al Nassr",
+        "officialName": "Al Nassr FC",
+        "slug": "al-nassr-fc",
+        "abbreviation": "NAS",
+        "teamCountryCode": "KSA",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Ulsan HD",
+        "officialName": "Ulsan HD FC",
+        "slug": "ulsan-hd-fc",
+        "abbreviation": "ULS",
+        "teamCountryCode": "KOR",
+        "stagePosition": null
+      },
+      "result": null,
+      "stage": {
+        "id": "FINAL",
+        "name": "Final",
+        "ordering": 7
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "al-faisaly-fc-vs-foolad-khuzestan-fc-2026-04-05",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "scheduled",
+      "timeVenueUTC": "19:00:00",
+      "dateVenue": "2026-04-05",
+      "stadium": null,
+      "homeTeam": {
+        "name": "Al Faisaly",
+        "officialName": "Al Faisaly FC",
+        "slug": "al-faisaly-fc",
+        "abbreviation": "FAI",
+        "teamCountryCode": "KSA",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Foolad",
+        "officialName": "Foolad Khouzestan FC",
+        "slug": "foolad-khuzestan-fc",
+        "abbreviation": "FLD",
+        "teamCountryCode": "IRN",
+        "stagePosition": null
+      },
+      "result": null,
+      "stage": {
+        "id": "FINAL",
+        "name": "Final",
+        "ordering": 7
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "al-hilal-saudi-fc-vs-esteghlal-fc-2026-04-05",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "scheduled",
+      "timeVenueUTC": "16:00:00",
+      "dateVenue": "2026-04-05",
+      "stadium": null,
+      "homeTeam": {
+        "name": "Al Hilal",
+        "officialName": "Al Hilal Saudi FC",
+        "slug": "al-hilal-saudi-fc",
+        "abbreviation": "HIL",
+        "teamCountryCode": "KSA",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Esteghlal",
+        "officialName": "Esteghlal FC",
+        "slug": "esteghlal-fc",
+        "abbreviation": "EST",
+        "teamCountryCode": "IRN",
+        "stagePosition": null
+      },
+      "result": null,
+      "stage": {
+        "id": "FINAL",
+        "name": "Final",
+        "ordering": 7
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "al-faisaly-fc-vs-foolad-khuzestan-fc-2026-04-09",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "scheduled",
+      "timeVenueUTC": "19:00:00",
+      "dateVenue": "2026-04-09",
+      "stadium": null,
+      "homeTeam": {
+        "name": "Al Faisaly",
+        "officialName": "Al Faisaly FC",
+        "slug": "al-faisaly-fc",
+        "abbreviation": "FAI",
+        "teamCountryCode": "KSA",
+        "stagePosition": null
+      },
+      "awayTeam": {
+        "name": "Foolad",
+        "officialName": "Foolad Khouzestan FC",
+        "slug": "foolad-khuzestan-fc",
+        "abbreviation": "FLD",
+        "teamCountryCode": "IRN",
+        "stagePosition": null
+      },
+      "result": null,
+      "stage": {
+        "id": "FINAL",
+        "name": "Final",
+        "ordering": 7
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "id": "tbd-vs-urawa-red-diamonds-2026-04-16",
+      "sport": "soccer",
+      "season": 2026,
+      "status": "scheduled",
+      "timeVenueUTC": "15:00:00",
+      "dateVenue": "2026-04-16",
+      "stadium": null,
+      "homeTeam": null,
+      "awayTeam": {
+        "name": "Urawa Reds",
+        "officialName": "Urawa Red Diamonds",
+        "slug": "urawa-red-diamonds",
+        "abbreviation": "RED",
+        "teamCountryCode": "JPN",
+        "stagePosition": null
+      },
+      "result": null,
+      "stage": {
+        "id": "FINAL",
+        "name": "Final",
+        "ordering": 7
+      },
+      "group": null,
+      "originCompetitionId": "afc-champions-league",
+      "originCompetitionName": "AFC Champions League"
+    }
+  ]
+}

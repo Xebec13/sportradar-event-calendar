@@ -1,17 +1,22 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import CalendarPicker from "@/components/calendar/CalendarPicker"
 import Icon from "@/components/ui/icons/Icons"
 import { useClickOutside } from "@/hooks/use-click-outside"
 
 /**
- * CalendarControls — date navigation bar sitting above the calendar grid.
+ * CalendarControls — date navigation bar sitting above the event list.
  *
  * Structure:
  * - Left / Right: ChevronLeft / ChevronRight buttons — step one day prev/next via handlePrevDay/handleNextDay.
  * - Center: date trigger (CalendarDays icon + dateLabel) — toggles the CalendarPicker popup.
+ *
+ * Props:
+ * - initialDate: YYYY-MM-DD string from URL searchParams — parsed via parseDateString to avoid
+ *   timezone offset issues that arise from new Date("YYYY-MM-DD") treating input as UTC.
+ *   Falls back to today when not provided.
  *
  * State:
  * - selectedDate: the active date; drives dateLabel and is passed to CalendarPicker.
@@ -21,22 +26,32 @@ import { useClickOutside } from "@/hooks/use-click-outside"
  * handleSelect: single entry point for date changes — updates selectedDate, closes picker,
  * pushes /?date=YYYY-MM-DD to the URL. Both chevrons and CalendarPicker route through it.
  *
- * dateLabel format: "2026 / 03 MON" — derived from selectedDate on every render.
+ * dateLabel format: "2026 / 03 / 30 MON" — derived from selectedDate on every render.
  *
  * Popup closes on outside click via useClickOutside(pickerRef).
  */
-export default function CalendarControls() {
+interface Props {
+    initialDate?: string;
+}
+
+function parseDateString(dateStr: string): Date {
+    const [year, month, day] = dateStr.split('-').map(Number);
+    return new Date(year, month - 1, day);
+}
+
+export default function CalendarControls({ initialDate }: Props) {
     const router = useRouter()
+    const searchParams = useSearchParams()
     const pickerRef = useRef<HTMLDivElement>(null)
-    const now = new Date()
+    const initial = initialDate ? parseDateString(initialDate) : new Date()
     const [isPickerOpen, setIsPickerOpen] = useState(false)
-    const [selectedDate, setSelectedDate] = useState(now)
-    const [viewYear, setViewYear] = useState(now.getFullYear())
-    const [viewMonth, setViewMonth] = useState(now.getMonth())
+    const [selectedDate, setSelectedDate] = useState(initial)
+    const [viewYear, setViewYear] = useState(initial.getFullYear())
+    const [viewMonth, setViewMonth] = useState(initial.getMonth())
 
     useClickOutside(pickerRef, () => setIsPickerOpen(false))
 
-    const dateLabel = `${selectedDate.getFullYear()} / ${String(selectedDate.getMonth() + 1).padStart(2, "0")} ${selectedDate.toLocaleDateString("en-US", { weekday: "short" }).toUpperCase()}`
+    const dateLabel = `${selectedDate.getFullYear()} / ${String(selectedDate.getMonth() + 1).padStart(2, "0")} / ${String(selectedDate.getDate()).padStart(2, "0")} ${selectedDate.toLocaleDateString("en-US", { weekday: "short" }).toUpperCase()}`
 
     const handleNavigate = (year: number, month: number) => {
         setViewYear(year)
@@ -47,7 +62,9 @@ export default function CalendarControls() {
         setSelectedDate(date)
         setIsPickerOpen(false)
         const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`
-        router.push(`/?date=${dateStr}`)
+        const params = new URLSearchParams(searchParams.toString())
+        params.set("date", dateStr)
+        router.push(`/?${params.toString()}`)
     }
 
     const handlePrevDay = () => {
@@ -64,7 +81,7 @@ export default function CalendarControls() {
 
     return (
         <div className="flex items-center justify-between gap-1 mt-0.5 min-h-15 py-1.5 px-2 rounded-t-md border border-blue-950 bg-blue-950/40">
-            <button onClick={handlePrevDay} className="flex items-center min-h-10 py-2 px-4 rounded-md bg-blue-950/80 shadow-2xl hover:bg-blue-900/80 cursor-pointer">
+            <button onClick={handlePrevDay} className="flex items-center min-h-10 py-1 px-2 md:py-2 md:px-4 rounded-md bg-blue-950/80 shadow-2xl hover:bg-blue-900/80 cursor-pointer">
                 <Icon name="ChevronLeft" className="size-4 md:size-5" />
             </button>
 
@@ -84,7 +101,7 @@ export default function CalendarControls() {
 
             </div>
 
-            <button onClick={handleNextDay} className="flex items-center min-h-10 py-2 px-4 rounded-md bg-blue-950/80 shadow-2xl transition-colors duration-150 ease-in-out hover:bg-blue-900/80 cursor-pointer">
+            <button onClick={handleNextDay} className="flex items-center min-h-10 py-1 px-2 md:py-2 md:px-4 rounded-md bg-blue-950/80 shadow-2xl transition-colors duration-150 ease-in-out hover:bg-blue-900/80 cursor-pointer">
                 <Icon name="ChevronRight" className="size-4 md:size-5" />
             </button>
         </div>

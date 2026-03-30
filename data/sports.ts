@@ -1,1 +1,1 @@
-export const SPORTS: string[] = ["Soccer", "Hockey"];
+export const SPORTS: string[] = ["soccer", "hockey"];

@@ -1,13 +1,10 @@
-import CalendarControls from "@/components/calendar/CalendarControls";
-import CalendarEventList from "@/components/calendar/CalendarEventList";
-import CalendarHeader from "@/components/calendar/CalendarHeader";
+import Calendar from '@/components/calendar/Calendar';
 
-export default function Home() {
-  return (
-    <main>
-      <CalendarHeader />
-      <CalendarControls />
-      <CalendarEventList/>
-    </main>
-  )
+interface Props {
+  searchParams: Promise<{ date?: string; sport?: string }>;
+}
+
+export default async function Home({ searchParams }: Props) {
+  const { date, sport } = await searchParams;
+  return <Calendar date={date} sport={sport} />;
 }
