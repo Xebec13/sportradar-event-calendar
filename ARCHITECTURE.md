@@ -28,11 +28,12 @@ sportradar-event-calendar/
 │
 ├── components/
 │   ├── ui/                       # Generic primitives — no domain knowledge
+│   │   ├── Logo.tsx
 │   │   ├── Badge.tsx
 │   │   ├── Button.tsx
 │   │   └── Input.tsx
-│   ├── layout/
-│   │   └── Navbar.tsx
+│   ├── nav/
+│   │   └── Nav.tsx
 │   ├── calendar/
 │   │   ├── CalendarGrid.tsx
 │   │   ├── CalendarCell.tsx
@@ -60,7 +61,7 @@ sportradar-event-calendar/
 ```
 
 **Why `components/` parallel to `app/` (not colocated)?**
-Component dependencies cross route boundaries — `Navbar` is global, `CalendarCell` depends on event types from the events feature. The parallel structure makes every component equally discoverable regardless of which route uses it.
+Component dependencies cross route boundaries — `Nav` is global, `CalendarCell` depends on event types from the events feature. The parallel structure makes every component equally discoverable regardless of which route uses it.
 
 **Why `lib/` for pure logic?**
 Task 9 requires unit tests for date helpers, filters, and validation. Logic in `lib/` has no React dependency — tests run as plain TypeScript with no DOM. No JSX in `lib/`, no imports from `components/`.
@@ -107,33 +108,6 @@ URL searchParams  →  lib/event-filters.ts
 
 ---
 
-## Data Model
-
-Defined in `lib/types.ts`:
-
-```ts
-interface SportEvent {
-  id: string
-  date: string      // ISO 8601: "2019-07-18"
-  time: string      // "18:30"
-  sport: string
-  homeTeam: string
-  awayTeam: string
-  venue?: string
-  status?: "scheduled" | "live" | "finished"
-}
-
-interface EventFilter {
-  sport: string | null
-  dateFrom: string | null  // ISO 8601
-  dateTo: string | null    // ISO 8601
-}
-```
-
-`id` is always a string — consistent with URL params. New events get `crypto.randomUUID()`. Dates are stored as ISO 8601 strings; conversion to `Date` objects happens only inside `lib/date-helpers.ts`.
-
----
-
 ## Server vs Client Components
 
 Default is Server Component. `"use client"` only when the component needs `useState`, `useEffect`, browser APIs, or interactive event handlers.
@@ -146,7 +120,7 @@ Default is Server Component. `"use client"` only when the component needs `useSt
 | `CalendarGrid.tsx` | Server | Pure render from props |
 | `CalendarCell.tsx` | Server | Pure render from props |
 | `EventDetail.tsx` | Server | Pure render from props |
-| `Navbar.tsx` | **Client** | `usePathname` for active link |
+| `Nav.tsx` | **Client** | `useState` for menu toggle |
 | `AddEventForm.tsx` | **Client** | `useState`, submit handler |
 | `FilterBar.tsx` | **Client** | Controlled inputs, `router.push` |
 | `use-events.ts` | **Client** | `useState`, localStorage |
@@ -174,7 +148,7 @@ One component per file. No default exports for non-component modules.
 
 - Import: `@import "tailwindcss"` — not `@tailwind base/components/utilities`
 - Theme tokens defined in `@theme` block in `globals.css`
-- Color palette: only `neutral-900`, `neutral-50`, `blue-600`, `red-500` and their opacity variants — no hex values, no custom color names
+- Color palette: `neutral-900`, `neutral-50`, `blue-950` (primary bg), `blue-900/80` (nav hover), `red-600` and their opacity variants — no hex values, no custom color names
 - Max 10 utility classes per element (excluding `hover:`, `focus:`, responsive variants). Exceeded → stop and discuss component extraction
 
 ---

@@ -53,8 +53,8 @@ Commits align 1:1 with tasks from TASK.md.
 **Color palette** (Tailwind only — no custom colors):
 - Background: `neutral-900`
 - Text: `neutral-50`
-- Primary: `blue-600`
-- Accent: `red-500`
+- Primary: `blue-950`
+- Accent: `red-600`
 - Hierarchy through lower-opacity variants of these four
 
 **Typography**: Source Sans 3 — for everything

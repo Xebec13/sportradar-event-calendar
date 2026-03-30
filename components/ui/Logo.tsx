@@ -10,7 +10,7 @@ export default function Logo() {
       <span>s</span>
       <span>p</span>
       <span className="grid place-items-center size-3 rounded-sm bg-red-600 md:size-4">
-        <span className="size-2.25 rounded-[2.5px] border-[1.5px] border-blue-950 md:size-3.25 md:border-2"></span>
+        <span className="size-2.25 rounded-[2.75px] border-[1.5px] border-blue-950 md:size-3.25 md:border-2"></span>
       </span>
       <span>r</span>
       <span>t</span>

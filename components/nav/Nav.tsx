@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { Calendar, CalendarPlus, type LucideIcon } from "lucide-react";
 import Logo from "@/components/ui/Logo";
+import { useClickOutside } from "@/hooks/use-click-outside";
 
 /**
  * Nav — primary navigation bar, visible on all breakpoints.
@@ -31,12 +32,14 @@ const navItems: { href: string; label: string; title: string; icon: LucideIcon }
     { href: "/add-event", label: "Add Event", title: "Add Event", icon: CalendarPlus },
 ];
 export default function Nav() {
+    const navRef = useRef<HTMLElement>(null)
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
+    useClickOutside(navRef, () => setIsOpen(false))
 
     return (
-        <nav className="relative flex items-center justify-between min-h-15 py-1.5 px-4 rounded-md bg-blue-950">
+        <nav ref={navRef} className="relative flex items-center justify-between min-h-15 py-1.5 px-4 rounded-md bg-blue-950">
             <Link href="/">
                 <Logo />
             </Link>
