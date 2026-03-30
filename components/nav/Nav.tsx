@@ -2,8 +2,8 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import { Calendar, CalendarPlus, type LucideIcon } from "lucide-react";
 import Logo from "@/components/ui/Logo";
+import Icon, { type IconName } from "@/components/ui/icons/Icons";
 import { useClickOutside } from "@/hooks/use-click-outside";
 
 /**
@@ -27,9 +27,9 @@ import { useClickOutside } from "@/hooks/use-click-outside";
  * isOpen is toggled via toggleMenu using the functional setState form (prev)
  * to avoid stale closure issues on rapid clicks.
  */
-const navItems: { href: string; label: string; title: string; icon: LucideIcon }[] = [
-    { href: "/", label: "Calendar", title: "Calendar", icon: Calendar },
-    { href: "/add-event", label: "Add Event", title: "Add Event", icon: CalendarPlus },
+const navItems: { href: string; label: string; title: string; icon: IconName }[] = [
+    { href: "/", label: "Calendar", title: "Calendar", icon: "Calendar" },
+    { href: "/add-event", label: "Add Event", title: "Add Event", icon: "CalendarPlus" },
 ];
 export default function Nav() {
     const navRef = useRef<HTMLElement>(null)
@@ -51,9 +51,9 @@ export default function Nav() {
                 <div className={`mt-0.5 absolute z-50 top-full right-full min-w-38 grid transition-all duration-150 ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
                     <div className="overflow-hidden">
                         <div className="flex flex-col justify-end rounded-md bg-blue-950 border border-neutral-950/50 text-xs md:text-sm p-2">
-                            {navItems.map(({ href, label, title, icon: Icon }) => (
+                            {navItems.map(({ href, label, title, icon }) => (
                                 <Link key={href} href={href} title={title} className="flex justify-between items-center gap-1 py-2 px-4 rounded-md bg-transparent transition-colors duration-150 ease-in hover:bg-blue-900/80">
-                                    <Icon className="size-4 md:size-5" />
+                                    <Icon name={icon} className="size-4 md:size-5" />
                                     <span className="whitespace-nowrap">{label}</span>
                                 </Link>
                             ))}

@@ -1,7 +1,7 @@
 "use client"
 
-import { ChevronLeft, ChevronRight } from "lucide-react"
 import { getMonthGrid, isSameDay } from "@/lib/date-helpers"
+import Icon from "@/components/ui/icons/Icons"
 
 interface CalendarPickerProps {
     year: number
@@ -46,11 +46,11 @@ export default function CalendarPicker({ year, month, selectedDate, onNavigate, 
         <div className="flex flex-col gap-2 p-2">
             <div className="flex items-center justify-between px-1">
                 <button className="rounded-sm p-0.5 cursor-pointer hover:bg-blue-900/80" onClick={handlePrev}>
-                    <ChevronLeft className="size-3.5" />
+                    <Icon name="ChevronLeft" className="size-3.5" />
                 </button>
                 <span className="text-xs font-semibold">{monthName} {year}</span>
                 <button className="rounded-sm p-0.5 cursor-pointer hover:bg-blue-900/80" onClick={handleNext}>
-                    <ChevronRight className="size-3.5" />
+                    <Icon name="ChevronRight" className="size-3.5" />
                 </button>
             </div>
 
