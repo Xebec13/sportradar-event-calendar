@@ -1,6 +1,6 @@
 import eventsData from '@/data/events.json';
 import { SPORTS } from '@/data/sports';
-import { CalendarHeader, CalendarControls, CalendarEventList } from '@/components/calendar';
+import { CalendarHeader, CalendarControls, CalendarEventList, CalendarGrid } from '@/components/calendar';
 import type { SportEvent } from '@/lib/types';
 
 /**
@@ -8,7 +8,8 @@ import type { SportEvent } from '@/lib/types';
  *
  * Reads events from the static JSON seed and filters them by date and sport
  * based on URL searchParams passed down from app/page.tsx.
- * Passes filtered data to CalendarEventList and initial state to CalendarControls.
+ * Passes day-filtered events to CalendarEventList (mobile) and month-filtered
+ * events to CalendarGrid (md+). CalendarControls receives initial state only.
  *
  * filterEvents runs on the server — no client-side state, no re-renders on filter change.
  * Adding a new filter param: extend Props, add a condition in filterEvents, pass it through.
@@ -34,16 +35,34 @@ function filterEvents(events: SportEvent[], date: string, sport?: string): Sport
   });
 }
 
+function filterMonthEvents(events: SportEvent[], monthPrefix: string, sport?: string): SportEvent[] {
+  return events.filter((event) => {
+    if (!event.dateVenue.startsWith(monthPrefix)) return false;
+    if (sport && event.sport !== sport) return false;
+    return true;
+  });
+}
+
 export default function Calendar({ date, sport }: Props) {
   const activeDate = date ?? getTodayString();
   const events = filterEvents(allEvents, activeDate, sport);
   const eventDates = [...new Set(allEvents.map((e) => e.dateVenue))];
 
+  const [yearStr, monthStr] = activeDate.split('-');
+  const year = parseInt(yearStr);
+  const month = parseInt(monthStr) - 1;
+  const monthEvents = filterMonthEvents(allEvents, activeDate.slice(0, 7), sport);
+
   return (
-    <main>
+    <main className="flex flex-col min-h-screen">
       <CalendarHeader sports={SPORTS} activeSport={sport ?? null} />
       <CalendarControls initialDate={activeDate} eventDates={eventDates} />
-      <CalendarEventList events={events} />
+      <div className="md:hidden">
+        <CalendarEventList events={events} />
+      </div>
+      <div className="hidden md:flex flex-col flex-1 rounded-lg">
+        <CalendarGrid year={year} month={month} events={monthEvents} selectedDate={activeDate} />
+      </div>
     </main>
   );
 }

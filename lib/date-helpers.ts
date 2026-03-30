@@ -1,3 +1,7 @@
+import type { SportEvent } from '@/lib/types';
+
+export const DAY_HEADERS = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'] as const;
+
 export interface DayCell {
     date: Date
     isCurrentMonth: boolean
@@ -10,6 +14,14 @@ export function isSameDay(a: Date, b: Date): boolean {
         a.getMonth() === b.getMonth() &&
         a.getDate() === b.getDate()
     )
+}
+
+export function formatDateString(date: Date): string {
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`
+}
+
+export function getEventsForDay(events: SportEvent[], dateStr: string): SportEvent[] {
+    return events.filter(e => e.dateVenue === dateStr)
 }
 
 export function getMonthGrid(year: number, month: number): DayCell[] {

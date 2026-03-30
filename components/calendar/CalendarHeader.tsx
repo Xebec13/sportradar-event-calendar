@@ -30,7 +30,7 @@ export default function CalendarHeader({ sports, activeSport }: Props) {
         } else {
             params.delete("sport")
         }
-        router.push(`/?${params.toString()}`)
+        router.push(`/?${params.toString()}`, { scroll: false })
     }
 
     const items = ["all", ...sports]

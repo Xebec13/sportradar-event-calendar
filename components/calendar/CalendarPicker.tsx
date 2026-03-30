@@ -1,6 +1,6 @@
 "use client"
 
-import { getMonthGrid, isSameDay } from "@/lib/date-helpers"
+import { getMonthGrid, isSameDay, formatDateString, DAY_HEADERS } from "@/lib/date-helpers"
 import Icon from "@/components/ui/icons/Icons"
 
 interface CalendarPickerProps {
@@ -12,8 +12,6 @@ interface CalendarPickerProps {
     eventDates?: string[]
 }
 
-const DAY_HEADERS = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
-
 /**
  * CalendarPicker — compact mini calendar rendered inside CalendarControls popup.
  *
@@ -24,7 +22,7 @@ const DAY_HEADERS = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
  *   Days outside current month rendered at /30 opacity.
  *
  * Selected day: bg-red-600 (no hover). All other days: hover:bg-blue-900/80.
- * isSameDay comparison from lib/date-helpers — timezone-safe (uses getFullYear/Month/Date).
+ * DAY_HEADERS, formatDateString, isSameDay — all from lib/date-helpers (single source of truth).
  *
  * onNavigate: updates viewYear/viewMonth in parent (CalendarControls).
  * onSelect: passes chosen Date up — CalendarControls handles state update + URL push.
@@ -64,7 +62,7 @@ export default function CalendarPicker({ year, month, selectedDate, onNavigate, 
                 ))}
                 {cells.map(({ date, isCurrentMonth }, i) => {
                     const isSelected = isSameDay(date, selectedDate)
-                    const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`
+                    const dateStr = formatDateString(date)
                     const hasEvent = eventDateSet.has(dateStr)
                     return (
                         <button

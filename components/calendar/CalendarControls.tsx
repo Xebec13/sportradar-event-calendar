@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
+import { formatDateString } from "@/lib/date-helpers"
 import CalendarPicker from "@/components/calendar/CalendarPicker"
 import Icon from "@/components/ui/icons/Icons"
 import { useClickOutside } from "@/hooks/use-click-outside"
@@ -62,10 +63,10 @@ export default function CalendarControls({ initialDate, eventDates }: Props) {
     const handleSelect = (date: Date) => {
         setSelectedDate(date)
         setIsPickerOpen(false)
-        const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`
+        const dateStr = formatDateString(date)
         const params = new URLSearchParams(searchParams.toString())
         params.set("date", dateStr)
-        router.push(`/?${params.toString()}`)
+        router.push(`/?${params.toString()}`, { scroll: false })
     }
 
     const handlePrevDay = () => {

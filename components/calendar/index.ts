@@ -4,3 +4,4 @@ export { default as CalendarHeader } from './CalendarHeader';
 export { default as CalendarControls } from './CalendarControls';
 export { default as CalendarEventList } from './CalendarEventList';
 export { default as CalendarPicker } from './CalendarPicker';
+export { default as CalendarGrid } from './CalendarGrid';
