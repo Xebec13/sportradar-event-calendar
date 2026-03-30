@@ -61,7 +61,7 @@ function PeriodHeader({ period, homeGoals, awayGoals }: { period: string; homeGo
   const awayWon = homeGoals !== null && awayGoals !== null && awayGoals > homeGoals;
 
   return (
-    <div className="flex items-center justify-between bg-blue-950/60 py-1.5 px-4 min-h-10 text-xs">
+    <div className="flex items-center justify-between bg-blue-950/90 py-1.5 px-4 min-h-10 text-xs">
       <span className="font-semibold tracking-widest text-neutral-50">{period}</span>
       {homeGoals !== null && awayGoals !== null && (
         <div className="flex items-center gap-1.5 tabular-nums">

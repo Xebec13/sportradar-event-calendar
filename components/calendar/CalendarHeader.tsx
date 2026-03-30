@@ -39,7 +39,7 @@ export default function CalendarHeader({ sports, activeSport }: Props) {
         <div className="flex items-center gap-6 mt-0.5 min-h-15 py-1.5 px-4 rounded-md bg-blue-950/80  overflow-x-auto">
             {items.map((sport) => {
                 const isActive = sport === "all" ? !activeSport : activeSport === sport
-                const label = sport.charAt(0).toUpperCase() + sport.slice(1)
+                const label = sport.split('_').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
                 return (
                     <button
                         key={sport}

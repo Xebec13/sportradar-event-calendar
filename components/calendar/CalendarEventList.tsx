@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Badge from '@/components/ui/Badge';
+import GridBg from '@/components/ui/GridBg';
 import type { SportEvent, EventStage } from '@/lib/types';
 
 /**
@@ -42,7 +43,8 @@ export default function CalendarEventList({ events }: Props) {
 
   if (events.length === 0) {
     return (
-      <section className="min-h-screen flex items-start justify-center">
+      <section className="relative min-h-screen flex items-start justify-center">
+        <GridBg />
         <p className="text-sm text-neutral-50 mt-16">
           No matches found
         </p>
@@ -51,7 +53,8 @@ export default function CalendarEventList({ events }: Props) {
   }
 
   return (
-    <section className="border-x border-b border-blue-950 min-h-screen">
+    <section className="relative border-x border-b border-blue-950 min-h-screen">
+      <GridBg />
       {groups.map(({ stage, events: stageEvents }) => (
         <div key={stage.id}>
           <div className="px-4 py-2 text-xs font-semibold uppercase tracking-widest text-neutral-50/80">

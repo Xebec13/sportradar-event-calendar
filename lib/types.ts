@@ -45,9 +45,21 @@ export interface EventStage {
   ordering: number;
 }
 
+export interface NewEventFormData {
+  homeTeam: string;
+  awayTeam: string;
+  dateVenue: string;
+  timeVenueUTC: string;
+  sport: string;
+  stadium: string;
+  competitionName: string;
+}
+
+export type FormErrors = Partial<Record<keyof NewEventFormData, string>>;
+
 export interface SportEvent {
   id: string;
-  sport: 'soccer';
+  sport: string;
   season: number;
   status: 'played' | 'scheduled' | 'live' | 'cancelled';
   timeVenueUTC: string;

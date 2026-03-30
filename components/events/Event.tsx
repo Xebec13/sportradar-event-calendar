@@ -1,4 +1,5 @@
 import { EventHeader, EventMeta, EventScoreBlock, EventTimeline } from '@/components/events';
+import GridBg from '@/components/ui/GridBg';
 import type { SportEvent } from '@/lib/types';
 
 /**
@@ -16,7 +17,8 @@ export default function Event({ event }: Props) {
   const { homeTeam, awayTeam, result, status, dateVenue, timeVenueUTC, stadium, originCompetitionName, stage, sport } = event;
 
   return (
-    <section className="mt-0.5 w-full min-h-screen rounded-md border-x border-t border-blue-950">
+    <section className="relative mt-0.5 w-full min-h-screen rounded-md border-x border-t border-blue-950">
+      <GridBg />
       <EventHeader
         sport={sport}
         competitionName={originCompetitionName}

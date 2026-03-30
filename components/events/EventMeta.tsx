@@ -11,7 +11,7 @@ interface Props {
 
 export default function EventMeta({ timeVenueUTC, stadium }: Props) {
   return (
-    <div className="flex flex-wrap items-center justify-start gap-x-3 gap-y-1 p-4 text-xs md:text-sm text-neutral-50/70 border-b border-blue-950/40">
+    <div className="flex flex-wrap items-center justify-start gap-x-3 gap-y-1 p-4 text-xs md:text-sm text-neutral-50/70 border-b-2 border-blue-950/90">
       <span>{timeVenueUTC.slice(0, 5)} UTC</span>
       {stadium && (
         <>

@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { getMonthGrid, formatDateString, getEventsForDay, DAY_HEADERS } from '@/lib/date-helpers';
 import Badge from '@/components/ui/Badge';
 import type { SportEvent } from '@/lib/types';
+import GridBg from '../ui/GridBg';
 
 /**
  * CalendarGrid — desktop monthly calendar grid (md+), client component.
@@ -51,7 +52,7 @@ function GridCell({ date, dateStr, isCurrentMonth, isToday, isSelected, isPast, 
   return (
     <div
       onClick={() => onSelect(dateStr)}
-      className={`flex flex-col h-full rounded-md overflow-y-auto border border-blue-950/60 cursor-pointer ${isCurrentMonth ? 'bg-blue-950/60' : 'bg-blue-950/20'} ${isSelected ? 'ring-1 ring-inset ring-red-600' : ''}`}
+      className={`flex flex-col h-full rounded-md overflow-y-auto border border-blue-950/60 cursor-pointer ${isCurrentMonth ? 'bg-blue-950/90' : 'bg-blue-950/60'} ${isSelected ? 'ring-1 ring-inset ring-red-600' : ''}`}
     >
       <div className="flex justify-end px-1.5 pt-1 pb-0.5 shrink-0">
         <span className={`text-sm tabular-nums ${dayNumberClass}`}>{date.getDate()}</span>
@@ -101,7 +102,8 @@ export default function CalendarGrid({ year, month, events, selectedDate }: Prop
   }
 
   return (
-    <div className="flex flex-col flex-1 rounded-b-md border-x border-b border-blue-950">
+    <div className="relative flex flex-col flex-1 rounded-b-md border-x border-b border-blue-950 p-4">
+      <GridBg/>
       <div className="grid grid-cols-7 border-b border-blue-950">
         {DAY_HEADERS.map((day) => (
           <div key={day} className="py-2 text-center text-xs font-semibold tracking-widest text-neutral-50/40 uppercase">
