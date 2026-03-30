@@ -46,7 +46,7 @@ export default function Nav() {
 
             <div className="relative group flex flex-col items-center justify-center gap-1 size-full max-w-fit cursor-pointer" onClick={toggleMenu}>
                 {Array.from({ length: 3 }).map((_, i) => (
-                    <div key={i} className="h-0.5 w-5 md:h-0.75 md:w-6 bg-current rounded-md transition-colors duration-150 ease-in group-hover:bg-red-600/80" />
+                    <div key={i} className={`h-0.5 w-5 md:h-0.75 md:w-6 rounded-md transition-colors duration-150 ease-in group-hover:bg-red-600/80 ${isOpen ? "bg-red-600/80" : "bg-current"}`} />
                 ))}
                 <div className={`mt-0.5 absolute z-50 top-full right-full min-w-38 grid transition-all duration-150 ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
                     <div className="overflow-hidden">
