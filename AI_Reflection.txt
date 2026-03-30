@@ -1,0 +1,42 @@
+AI Collaboration Reflection
+===========================
+Project: Sportradar Event Calendar
+Human: David
+AI: Claude (Anthropic) — claude-sonnet-4-6
+
+
+How we divided the work
+-----------------------
+David owned the layout, visual structure, and all design decisions. He set up component placeholders, defined the folder architecture upfront, and led on every aesthetic call — color palette, proportions, the Flashscore-inspired vibe. He also wrote CLAUDE.md, which defined the rules of our collaboration before a single line of product code was written.
+
+I handled the logic layer: filling in component behavior, writing date helpers and validation, wiring up state management with useSearchParams and localStorage, and making sure the TypeScript stayed strict throughout. I also challenged my own solutions before presenting them — if I saw a simpler path, I said so.
+
+Neither of us wrote code comments alone. Every comment in the codebase was agreed on together before it went in.
+
+
+How we actually worked
+----------------------
+David always came with a clear intent. He didn't ask "build me a calendar app" — he had already thought through the architecture, named the components, and decided what went where. My job was to fill that structure with working logic, not to redesign it.
+
+Before writing any code I presented a plan with reasoning. David approved, pushed back, or redirected — then I wrote. This kept us from writing code that needed to be undone five minutes later.
+
+We worked one component at a time. When something was unclear, I asked rather than guessed. When David rejected an approach, I remembered it and didn't repeat it.
+
+The stack had real constraints worth mentioning: Tailwind CSS v4 (not v3 — different import syntax, @theme blocks instead of config files), Next.js 16 with breaking changes (params is a Promise in Server Components), and React 19. These aren't the versions in most training data or Stack Overflow answers, so I had to be more careful than usual — reading local docs rather than relying on pattern matching.
+
+
+What worked well
+----------------
+The upfront architecture paid off. Because David had already mapped out every file and its responsibility before we started, there was almost no structural backtracking. The ARCHITECTURE.md and CLAUDE.md files weren't bureaucracy — they were load-bearing.
+
+The constraint system also helped: max 10 Tailwind utility classes per element, no any in TypeScript, URL searchParams for filters (not component state). Constraints that sound restrictive actually speed things up because they cut off entire categories of bad decisions before you make them.
+
+
+What was harder
+---------------
+Tailwind v4 and Next.js 16 are genuinely new. A few times my first instinct came from an older version of the API and I had to correct course. The honest answer is that working at the edge of a stack requires more verification and less autopilot — which is probably the right mode for a recruitment project anyway.
+
+
+Final thought
+-------------
+This felt less like "using an AI tool" and more like working with someone who had a different role on the same team. David made the calls that required taste and vision. I made the calls that required precision and knowledge of the spec. The project is better for having both.
