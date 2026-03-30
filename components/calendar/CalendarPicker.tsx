@@ -9,6 +9,7 @@ interface CalendarPickerProps {
     selectedDate: Date
     onNavigate: (year: number, month: number) => void
     onSelect: (date: Date) => void
+    eventDates?: string[]
 }
 
 const DAY_HEADERS = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
@@ -28,8 +29,9 @@ const DAY_HEADERS = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
  * onNavigate: updates viewYear/viewMonth in parent (CalendarControls).
  * onSelect: passes chosen Date up — CalendarControls handles state update + URL push.
  */
-export default function CalendarPicker({ year, month, selectedDate, onNavigate, onSelect }: CalendarPickerProps) {
+export default function CalendarPicker({ year, month, selectedDate, onNavigate, onSelect, eventDates }: CalendarPickerProps) {
     const cells = getMonthGrid(year, month)
+    const eventDateSet = new Set(eventDates)
     const monthName = new Date(year, month, 1).toLocaleDateString("en-US", { month: "long" }).toUpperCase()
 
     const handlePrev = () => {
@@ -62,6 +64,8 @@ export default function CalendarPicker({ year, month, selectedDate, onNavigate, 
                 ))}
                 {cells.map(({ date, isCurrentMonth }, i) => {
                     const isSelected = isSameDay(date, selectedDate)
+                    const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`
+                    const hasEvent = eventDateSet.has(dateStr)
                     return (
                         <button
                             key={i}
@@ -70,8 +74,8 @@ export default function CalendarPicker({ year, month, selectedDate, onNavigate, 
                                 isSelected
                                     ? "bg-red-600 font-semibold"
                                     : isCurrentMonth
-                                    ? "text-neutral-50 hover:bg-blue-900/80"
-                                    : "text-neutral-50/30 hover:bg-blue-900/80"
+                                    ? `text-neutral-50 hover:bg-blue-900/80 ${hasEvent ? "border border-blue-900" : ""}`
+                                    : `text-neutral-50/30 hover:bg-blue-900/80 ${hasEvent ? "border border-blue-900/50" : ""}`
                             }`}
                         >
                             {date.getDate()}

@@ -37,11 +37,12 @@ function filterEvents(events: SportEvent[], date: string, sport?: string): Sport
 export default function Calendar({ date, sport }: Props) {
   const activeDate = date ?? getTodayString();
   const events = filterEvents(allEvents, activeDate, sport);
+  const eventDates = [...new Set(allEvents.map((e) => e.dateVenue))];
 
   return (
     <main>
       <CalendarHeader sports={SPORTS} activeSport={sport ?? null} />
-      <CalendarControls initialDate={activeDate} />
+      <CalendarControls initialDate={activeDate} eventDates={eventDates} />
       <CalendarEventList events={events} />
     </main>
   );

@@ -32,6 +32,7 @@ import { useClickOutside } from "@/hooks/use-click-outside"
  */
 interface Props {
     initialDate?: string;
+    eventDates?: string[];
 }
 
 function parseDateString(dateStr: string): Date {
@@ -39,7 +40,7 @@ function parseDateString(dateStr: string): Date {
     return new Date(year, month - 1, day);
 }
 
-export default function CalendarControls({ initialDate }: Props) {
+export default function CalendarControls({ initialDate, eventDates }: Props) {
     const router = useRouter()
     const searchParams = useSearchParams()
     const pickerRef = useRef<HTMLDivElement>(null)
@@ -80,19 +81,19 @@ export default function CalendarControls({ initialDate }: Props) {
     }
 
     return (
-        <div className="flex items-center justify-between gap-1 mt-0.5 min-h-15 py-1.5 px-2 rounded-t-md border border-blue-950 bg-blue-950/40">
-            <button onClick={handlePrevDay} className="flex items-center min-h-10 py-1 px-2 md:py-2 md:px-4 rounded-md bg-blue-950/80 shadow-2xl hover:bg-blue-900/80 cursor-pointer">
+        <div className="flex items-center justify-between gap-1 mt-0.5 min-h-15 py-1.5 px-2 rounded-t-md border border-blue-950 bg-blue-950/40 ">
+            <button onClick={handlePrevDay} className="flex items-center min-h-10 py-1 px-2 md:py-2 md:px-4 rounded-md bg-blue-950/80 transition-colors duration-150 ease-in-out hover:bg-blue-900/80 inset-shadow-xs inset-shadow-neutral-950/60 cursor-pointer">
                 <Icon name="ChevronLeft" className="size-4 md:size-5" />
             </button>
 
-            <div ref={pickerRef} className="flex flex-1 items-center justify-center gap-2 min-h-10 h-full rounded-md bg-blue-950/80">
-                <div className="relative flex items-end justify-center gap-3 py-1.5 px-4 rounded-md bg-blue-950 border border-neutral-950/50 shadow-md cursor-pointer" onClick={() => setIsPickerOpen((prev) => !prev)}>
+            <div ref={pickerRef} className="flex flex-1 items-center justify-center gap-2 min-h-10 h-full rounded-md bg-blue-950/80 inset-shadow-xs inset-shadow-neutral-950/60 ">
+                <div className="relative flex items-end justify-center gap-3 py-1.5 px-4 rounded-md bg-blue-950 border border-neutral-950/50 duration-150 transition-colors hover:bg-blue-900/80 cursor-pointer" onClick={() => setIsPickerOpen((prev) => !prev)}>
                     <Icon name="CalendarDays" className="size-4 md:size-5" />
                     <span className="text-xs font-semibold md:text-sm">{dateLabel}</span>
-                    <div className={`mt-0.5 absolute grid z-50 top-full left-0 min-w-44 rounded-md border border-neutral-950/50 shadow-md transition-all ease-in-out duration-150 ${isPickerOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                    <div onClick={(e) => e.stopPropagation()} className={`mt-0.5 absolute grid z-50 top-full left-0 min-w-44 rounded-md border border-neutral-950/50 shadow-md transition-all ease-in-out duration-150 ${isPickerOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
                         <div className="overflow-hidden">
                             <div className="rounded-md bg-blue-950">
-                                <CalendarPicker year={viewYear} month={viewMonth} selectedDate={selectedDate} onNavigate={handleNavigate} onSelect={handleSelect} />
+                                <CalendarPicker year={viewYear} month={viewMonth} selectedDate={selectedDate} onNavigate={handleNavigate} onSelect={handleSelect} eventDates={eventDates} />
                             </div>
                         </div>
                     </div>
@@ -101,7 +102,7 @@ export default function CalendarControls({ initialDate }: Props) {
 
             </div>
 
-            <button onClick={handleNextDay} className="flex items-center min-h-10 py-1 px-2 md:py-2 md:px-4 rounded-md bg-blue-950/80 shadow-2xl transition-colors duration-150 ease-in-out hover:bg-blue-900/80 cursor-pointer">
+            <button onClick={handleNextDay} className="flex items-center min-h-10 py-1 px-2 md:py-2 md:px-4 rounded-md bg-blue-950/80 transition-colors duration-150 ease-in-out hover:bg-blue-900/80 inset-shadow-xs inset-shadow-neutral-950/60 cursor-pointer">
                 <Icon name="ChevronRight" className="size-4 md:size-5" />
             </button>
         </div>

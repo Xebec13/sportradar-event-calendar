@@ -42,7 +42,7 @@ export default function CalendarEventList({ events }: Props) {
 
   if (events.length === 0) {
     return (
-      <section className="min-h-screen flex items-start justify-center bg-blue-950/40">
+      <section className="min-h-screen flex items-start justify-center">
         <p className="text-sm text-neutral-50 mt-16">
           No matches found
         </p>
@@ -51,7 +51,7 @@ export default function CalendarEventList({ events }: Props) {
   }
 
   return (
-    <section className="border-x border-b border-blue-950 min-h-screen bg-blue-950/40">
+    <section className="border-x border-b border-blue-950 min-h-screen">
       {groups.map(({ stage, events: stageEvents }) => (
         <div key={stage.id}>
           <div className="px-4 py-2 text-xs font-semibold uppercase tracking-widest text-neutral-50/80">
@@ -61,7 +61,7 @@ export default function CalendarEventList({ events }: Props) {
             <Link
               key={event.id}
               href={`/events/${event.id}`}
-              className="flex items-center gap-6 px-4 py-3 bg-blue-950/50 hover:bg-blue-900/80 active:bg-blue-900 min-h-20 w-full shadow-2xl transition-colors"
+              className="flex items-center gap-6 px-4 py-3 bg-blue-950/50 hover:bg-blue-900/80 active:bg-blue-900 min-h-20 w-full inset-shadow-xs inset-shadow-neutral-950/60 hover:inset-shadow-none hover:shadow-neutral-950/80 hover:shadow-sm transition-colors"
             >
               <div className="flex flex-col items-center justify-center gap-1.5 min-w-10">
                 <span className="text-xs text-neutral-50/50">{formatTime(event.timeVenueUTC)}</span>
