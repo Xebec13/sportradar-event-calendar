@@ -104,7 +104,7 @@ export default function CalendarGrid({ year, month, events, selectedDate }: Prop
   return (
     <div className="relative flex flex-col flex-1 rounded-b-md border-x border-b border-blue-950 p-4">
       <GridBg/>
-      <div className="grid grid-cols-7 border-b border-blue-950">
+      <div className="grid grid-cols-7">
         {DAY_HEADERS.map((day) => (
           <div key={day} className="py-2 text-center text-xs font-semibold tracking-widest text-neutral-50/40 uppercase">
             {day}
